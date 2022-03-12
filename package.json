@@ -1,0 +1,42 @@
+{
+  "name": "web-soft-project",
+  "author": {
+    "name": "DonVietnam",
+    "email": "don.vietnam.js@gmail.com"
+  },
+  "version": "1.0.0",
+  "description": "Cli tool for generating projects templates.",
+  "license": "MIT",
+  "keywords": [
+    "vietnam",
+    "nodejs"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LLC-WebSoft/web-soft-project"
+  },
+  "bugs": {
+    "url": "https://github.com/LLC-WebSoft/web-soft-project/issues",
+    "email": "don.vietnam.js@gmail.com"
+  },
+  "homepage": "https://github.com/LLC-WebSoft/web-soft-project",
+  "main": "cli.js",
+  "files": [
+    "lib/",
+    "cli.js"
+  ],
+  "scripts": {
+    "start": "node cli.js",
+    "lint": "eslint --ignore-path .gitignore .",
+    "fix": "eslint --fix --ignore-path .gitignore .",
+    "prettier": "npx prettier --write ."
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "2.5.1"
+  }
+}
