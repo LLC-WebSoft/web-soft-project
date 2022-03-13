@@ -22,7 +22,8 @@
   "homepage": "https://github.com/LLC-WebSoft/web-soft-project",
   "files": [
     "lib/",
-    "cli.js"
+    "cli.js",
+    ".gitignore"
   ],
   "scripts": {
     "start": "node cli.js",
