@@ -1,0 +1,45 @@
+{
+  "name": "$projectName$",
+  "author": {
+    "name": "$authorName$",
+    "email": "$authorEmail$"
+  },
+  "version": "1.0.0",
+  "description": "$projectDescription$",
+  "license": "MIT",
+  "keywords": [
+    "$keywords$"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "$projectUrl$"
+  },
+  "bugs": {
+    "url": "$projectUrl$/issues",
+    "email": "$authorEmail$"
+  },
+  "homepage": "$projectUrl$",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon --signal SIGTERM --exec \"node src/index.js\"",
+    "docker-dev": "docker compose up -d && npm run dev",
+    "lint": "eslint --ignore-path .gitignore .",
+    "fix": "eslint --fix --ignore-path .gitignore .",
+    "test": "npm run lint && jest test",
+    "prettier": "npx prettier --write ."
+  },
+  "engines": {
+    "node": ">=16"
+  },
+  "dependencies": {
+    "web-soft-server": "^1.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.8.1",
+    "eslint-config-prettier": "^8.3.0",
+    "jest": "^27.3.1",
+    "nodemon": "^2.0.4",
+    "prettier": "2.5.1"
+  }
+}

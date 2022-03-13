@@ -20,7 +20,6 @@
     "email": "don.vietnam.js@gmail.com"
   },
   "homepage": "https://github.com/LLC-WebSoft/web-soft-project",
-  "main": "cli.js",
   "files": [
     "lib/",
     "cli.js"
@@ -41,5 +40,6 @@
   },
   "dependencies": {
     "parse-options": "^1.0.2"
-  }
+  },
+  "bin": "cli.js"
 }

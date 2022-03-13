@@ -1,4 +1,4 @@
-'use strict';
+#!/usr/bin/env node
 
 const parseOptions = require('parse-options');
 const { createServer } = require('./lib/server');
