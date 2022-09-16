@@ -6,7 +6,6 @@
   },
   "version": "1.0.0",
   "description": "$projectDescription$",
-  "license": "MIT",
   "keywords": [
     "$keywords$"
   ],
@@ -23,23 +22,27 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon --signal SIGTERM --exec \"node src/index.js\"",
-    "docker-dev": "docker compose up -d && npm run dev",
-    "lint": "eslint --ignore-path .gitignore .",
-    "fix": "eslint --fix --ignore-path .gitignore .",
-    "test": "npm run lint && jest test",
-    "prettier": "npx prettier --write ."
+    "docker": "docker volume create pgdata && docker compose up -d",
+    "docker-dev": "npm run docker && npm run dev",
+    "lint": "eslint --ignore-path .eslintignore .",
+    "fix": "eslint --fix --ignore-path .eslintignore .",
+    "unit": "jest test/unit -i --passWithNoTests",
+    "integration": "cross-env PGHOST=localhost PGUSER=test_user PGDATABASE=test_db PGPASSWORD=test_password PGPORT=5432 HOST=localhost PORT=8000 jest test/integration -i --passWithNoTests",
+    "test": "npm run unit && npm run integration",
+    "prettier": "prettier --write -ignore-path .prettierignore ."
   },
   "engines": {
     "node": ">=16"
   },
   "dependencies": {
-    "web-soft-server": "^1.0.1"
+    "web-soft-server": "^2.0.2"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "eslint": "^7.8.1",
     "eslint-config-prettier": "^8.3.0",
     "jest": "^27.3.1",
     "nodemon": "^2.0.4",
-    "prettier": "2.5.1"
-  }
+    "prettier": "2.5.1",
+    $preCommit$
 }
